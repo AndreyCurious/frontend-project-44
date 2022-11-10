@@ -4,4 +4,7 @@
 [![Test Coverage](https://api.codeclimate.com/v1/badges/f3e3b061588284463d8d/test_coverage)](https://codeclimate.com/github/AndreyCurious/frontend-project-44/test_coverage)
 
 Asciinema brain-even
-https://asciinema.org/a/i9CHZ6PdZMONtMrwh3Zfxa68F
+https://asciinema.org/a/cf5iLIHLO5aMpGD0c16a7OycJ
+
+Asciinema brain-calc
+https://asciinema.org/a/0W72c7bQvrLWR8MH0m2aubDTo
