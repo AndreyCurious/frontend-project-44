@@ -15,7 +15,7 @@ export const basisOfTheGame = (rule, task) => {
       console.log('Correct!');
       i += 1;
     } else {
-      console.log(`${"Let's try again,"} ${userName}`);
+      console.log(`${"Let's try again,"} ${userName}!`);
       break;
     }
     if (i === 3) {
