@@ -24,13 +24,12 @@ export default () => {
       }
     }
     if (Number(random) === Number(item)) {
-        return 'Correct!';
-    } else {
-      console.log(
-      `'${random}'${' is wrong answer ;(. Correct answer was'} '${item}'`,
-      );
+      return 'Correct!';
     }
+    console.log(
+      `'${random}'${' is wrong answer ;(. Correct answer was'} '${item}'`,
+    );
     return 'break!';
-  }; 
-  basisOfTheGame(ruleOfGcd, taskOfGcd)
+  };
+  basisOfTheGame(ruleOfGcd, taskOfGcd);
 };
