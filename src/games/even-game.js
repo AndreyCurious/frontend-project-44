@@ -6,7 +6,7 @@ export default () => {
   const ruleOfEven = 'Answer "yes" if the number is even, otherwise answer "no".';
   const taskOfEven = () => {
     const num = getRandomInt(101);
-    console.log(`${'Question: '} ${num}`);
+    console.log(`${'Question: '} ${Number(num)}`);
     const random = readlineSync.question(`${'Your answer: '}`);
     if (
       (num % 2 === 0 && random === 'yes')
