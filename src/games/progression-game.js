@@ -15,7 +15,7 @@ export default () => {
     }
     const uniknow = progression[number];
     progression[number] = '..';
-    console.log(`${'Question: '} ${progression.join(' ')}`);
+    console.log(`${'Question: '}${progression.join(' ')}`);
     const random = readlineSync.question(`${'Your answer: '}`);
     if (Number(random) === Number(uniknow)) {
       return 'Correct!';

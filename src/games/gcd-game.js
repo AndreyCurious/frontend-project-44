@@ -7,7 +7,7 @@ export default () => {
   const taskOfGcd = () => {
     const num1 = getRandomInt(20);
     const num2 = getRandomInt(20);
-    console.log(`${'Question: '} ${num1} ${num2}`);
+    console.log(`${'Question: '}${num1}${num2}`);
     const random = readlineSync.question(`${'Your answer: '}`);
     let item = 1;
     if (num1 > num2) {
