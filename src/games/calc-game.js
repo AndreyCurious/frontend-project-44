@@ -9,7 +9,7 @@ export default () => {
     const num1 = getRandomInt(101);
     const num2 = getRandomInt(101);
     const operator = getRandomOperator(['+', '-', '*']);
-    console.log(`${'Question: '} ${num1} ${operator} ${num2}`);
+    console.log(`${'Question: '}${num1}${operator}${num2}`);
     const random = readlineSync.question(`${'Your answer: '}`);
 
     let result = 0;
