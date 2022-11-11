@@ -7,10 +7,11 @@ export const greetings = () => {
   return userName;
 };
 export const basisOfTheGame = (rule, task) => {
+  const rounds = 3;
   const userName = greetings();
   let i = 0;
   console.log(rule);
-  while (i < 3) {
+  while (i < rounds) {
     if (task() === 'Correct!') {
       console.log('Correct!');
       i += 1;
@@ -18,7 +19,7 @@ export const basisOfTheGame = (rule, task) => {
       console.log(`${"Let's try again,"} ${userName}!`);
       break;
     }
-    if (i === 3) {
+    if (i === rounds) {
       console.log(`${'Congratulations,'} ${userName}!`);
     }
   }
