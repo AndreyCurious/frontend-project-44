@@ -5,8 +5,8 @@ import { basisOfTheGame } from '../index.js';
 export default () => {
   const ruleOfGcd = 'Find the greatest common divisor of given numbers.';
   const taskOfGcd = () => {
-    const num1 = getRandomInt(20);
-    const num2 = getRandomInt(20);
+    const num1 = getRandomInt(20, 1);
+    const num2 = getRandomInt(20, 1);
     console.log(`${'Question: '}${num1} ${num2}`);
     const random = readlineSync.question(`${'Your answer: '}`);
     let item = 1;
