@@ -12,19 +12,20 @@ export default () => {
     console.log(`${'Question: '}${num1} ${operator} ${num2}`);
     const random = readlineSync.question(`${'Your answer: '}`);
 
-    let result = 0;
-    if (operator === '-') {
-      result = num1 - num2;
-    } else if (operator === '+') {
-      result = num1 + num2;
-    } else if (operator === '*') {
-      result = num1 * num2;
-    }
+    const result = () => {
+      if (operator === '-') {
+        return num1 - num2;
+      }
+      if (operator === '+') {
+        return num1 + num2;
+      }
+      return num1 * num2;
+    };
     switch (Number(random)) {
-      case Number(result):
+      case Number(result()):
         return 'Correct!';
       default:
-        console.log(`'${random}' is wrong answer ;(. Correct answer was '${result}'.`);
+        console.log(`'${random}' is wrong answer ;(. Correct answer was '${result()}'.`);
         return 'break!';
     }
   };
