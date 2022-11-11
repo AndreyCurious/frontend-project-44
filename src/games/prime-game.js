@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
-import { getRandomInt } from '../src/get-random.js';
-import { basisOfTheGame } from '../src/index.js';
+import { getRandomInt } from '../get-random.js';
+import { basisOfTheGame } from '../index.js';
 
 export default () => {
   const ruleOfPrime = 'Answer "yes" if given number is prime. Otherwise answer "no".';

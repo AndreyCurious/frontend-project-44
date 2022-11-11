@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
-import { getRandomInt } from '../src/get-random.js';
-import { basisOfTheGame } from '../src/index.js';
+import { getRandomInt } from '../get-random.js';
+import { basisOfTheGame } from '../index.js';
 
 export default () => {
   const ruleOfEven = 'Answer "yes" if the number is even, otherwise answer "no".';

@@ -1,6 +1,6 @@
 import readlineSync from 'readline-sync';
-import { getRandomInt, getRandomOperator } from '../src/get-random.js';
-import { basisOfTheGame } from '../src/index.js';
+import { getRandomInt, getRandomOperator } from '../get-random.js';
+import { basisOfTheGame } from '../index.js';
 
 export default () => {
   const ruleOfCalc = 'What is the result of the expression?';
