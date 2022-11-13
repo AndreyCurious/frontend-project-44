@@ -11,7 +11,7 @@ export default () => {
     const indexUnknowNum = getRandomInt(itemsProgression);
     const getProgression = () => {
       const progression = [];
-      for (let i = startProgression; i < startProgression 
+      for (let i = startProgression; i < startProgression
         + (itemsProgression * interval); i += interval) {
         progression.push(i);
       }
