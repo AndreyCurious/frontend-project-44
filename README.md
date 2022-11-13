@@ -10,7 +10,7 @@ OS: -macOS
     -Ubuntu for Windows
     -linuxOS
 
-<h2>Asciinema brain-even</h2>
+<h2>Asciinema brain-even + start settings</h2>
 <a href="https://asciinema.org/a/HeKlTIWhcFXZD6wJSrLHYSeq0" target="_blank"><img src="https://asciinema.org/a/HeKlTIWhcFXZD6wJSrLHYSeq0.svg" /></a>
 
 <h2>Asciinema brain-calc</h2>
@@ -24,12 +24,3 @@ OS: -macOS
 
 <h2>Asciinema brain-prime</h2>
 <a href="https://asciinema.org/a/oY1Sv3dk7Wjlgb7tgfyW1M7rs" target="_blank"><img src="https://asciinema.org/a/oY1Sv3dk7Wjlgb7tgfyW1M7rs.svg" /></a>
-
-<styles>
-    h1 {
-        color: yellow;
-    }
-    h2 {
-        color: blue;
-    }
-</styles>
