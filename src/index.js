@@ -12,10 +12,16 @@ export const basisOfTheGame = (rule, task) => {
   let i = 0;
   console.log(rule);
   while (i < rounds) {
-    if (task() === 'Correct!') {
+    const result = task();
+    console.log(`${'Question: '}${result[0]}`);
+    const resultUser = readlineSync.question(`${'Your answer: '}`);
+    if (result[1] == resultUser) {
       console.log('Correct!');
       i += 1;
     } else {
+      console.log(
+        `'${resultUser}'${' is wrong answer ;(. Correct answer was'} '${result[1]}'`,
+      );
       console.log(`${"Let's try again,"} ${userName}!`);
       break;
     }

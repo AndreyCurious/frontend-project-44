@@ -1,33 +1,26 @@
-import readlineSync from 'readline-sync';
 import { getRandomInt, getRandomOperator } from '../get-random.js';
 import { basisOfTheGame } from '../index.js';
 
 export default () => {
   const ruleOfCalc = 'What is the result of the expression?';
-
-  const taskOfCalc = () => {
-    const num1 = getRandomInt(101);
-    const num2 = getRandomInt(101);
+  const getCalcData = () => {
+    const resultOfGame = [];
+    const firstVariable = getRandomInt(101);
+    const secondVariable = getRandomInt(101);
     const operator = getRandomOperator(['+', '-', '*']);
-    console.log(`${'Question: '}${num1} ${operator} ${num2}`);
-    const random = readlineSync.question(`${'Your answer: '}`);
-
-    const result = () => {
+    const question = `${firstVariable} ${operator} ${secondVariable}`;
+    const getСorrectResult = () => {
       if (operator === '-') {
-        return num1 - num2;
+        return firstVariable - secondVariable;
       }
       if (operator === '+') {
-        return num1 + num2;
+        return firstVariable + secondVariable;
       }
-      return num1 * num2;
+      return firstVariable * secondVariable;
     };
-    switch (Number(random)) {
-      case Number(result()):
-        return 'Correct!';
-      default:
-        console.log(`'${random}' is wrong answer ;(. Correct answer was '${result()}'.`);
-        return 'break!';
-    }
+    resultOfGame.push(question);
+    resultOfGame.push(getСorrectResult());
+    return resultOfGame;
   };
-  basisOfTheGame(ruleOfCalc, taskOfCalc);
+  basisOfTheGame(ruleOfCalc, getCalcData);
 };
