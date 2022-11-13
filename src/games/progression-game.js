@@ -5,20 +5,21 @@ export default () => {
   const ruleOfProgression = 'What number is missing in the progression?';
   const getProgressionData = () => {
     const resultOfGame = [];
-    const itemsOfProgression = getRandomInt(11, 5);
-    const startOfProgression = getRandomInt(101);
+    const itemsProgression = getRandomInt(11, 5);
+    const startProgression = getRandomInt(101);
     const interval = getRandomInt(10, 1);
-    const indexOfUnknowNum = getRandomInt(itemsOfProgression);
+    const indexUnknowNum = getRandomInt(itemsProgression);
     const getProgression = () => {
       const progression = [];
-      for (let i = startOfProgression; i < startOfProgression + (itemsOfProgression * interval); i += interval) {
+      for (let i = startProgression; i < startProgression 
+        + (itemsProgression * interval); i += interval) {
         progression.push(i);
       }
       return progression;
     };
     const progression = getProgression();
-    const uniknowNum = progression[indexOfUnknowNum];
-    progression[indexOfUnknowNum] = '..';
+    const uniknowNum = progression[indexUnknowNum];
+    progression[indexUnknowNum] = '..';
     resultOfGame.push(progression.join(' '));
     resultOfGame.push(uniknowNum);
     return resultOfGame;
