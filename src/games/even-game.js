@@ -1,21 +1,20 @@
-import { getRandomInt } from '../get-random.js';
-import { basisOfTheGame } from '../index.js';
+import getRandomInt from '../helpers.js';
+import createBasisGame from '../index.js';
+
+const getСorrectResult = (variable) => {
+  if (variable % 2 === 0) {
+    return 'yes';
+  }
+  return 'no';
+};
 
 export default () => {
   const ruleOfEven = 'Answer "yes" if the number is even, otherwise answer "no".';
-  const getEvenData = () => {
-    const resultOfGame = [];
+  const createQuestionAnswer = () => {
     const variable = getRandomInt(101);
     const question = `${variable}`;
-    const getСorrectResult = () => {
-      if (variable % 2 === 0) {
-        return 'yes';
-      }
-      return 'no';
-    };
-    resultOfGame.push(question);
-    resultOfGame.push(getСorrectResult());
-    return resultOfGame;
+    const answer = getСorrectResult(variable);
+    return { question, answer };
   };
-  basisOfTheGame(ruleOfEven, getEvenData);
+  createBasisGame(ruleOfEven, createQuestionAnswer);
 };
