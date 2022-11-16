@@ -5,24 +5,30 @@ const getRandomOperator = (arr) => {
   const alert = Math.floor(Math.random() * arr.length);
   return arr[alert];
 };
+
 const getСorrectResult = (firstVariable, operator, secondVariable) => {
-  if (operator === '-') {
-    return firstVariable - secondVariable;
+  switch (operator) {
+    case '-':
+      return firstVariable - secondVariable;
+    case '+':
+      return firstVariable + secondVariable;
+    case '*':
+      return firstVariable * secondVariable;
+    default:
+      throw new Error(`Unknown operator: '${operator}'!`);
   }
-  if (operator === '+') {
-    return firstVariable + secondVariable;
-  }
-  return firstVariable * secondVariable;
 };
+
+const createQuestionAnswer = () => {
+  const firstVariable = getRandomInt();
+  const operator = getRandomOperator(['+', '-', '*']);
+  const secondVariable = getRandomInt();
+  const question = `${firstVariable} ${operator} ${secondVariable}`;
+  const answer = getСorrectResult(firstVariable, operator, secondVariable);
+  return { question, answer };
+};
+
 export default () => {
   const ruleOfCalc = 'What is the result of the expression?';
-  const createQuestionAnswer = () => {
-    const firstVariable = getRandomInt(101);
-    const operator = getRandomOperator(['+', '-', '*']);
-    const secondVariable = getRandomInt(101);
-    const question = `${firstVariable} ${operator} ${secondVariable}`;
-    const answer = getСorrectResult(firstVariable, operator, secondVariable);
-    return { question, answer };
-  };
   createBasisGame(ruleOfCalc, createQuestionAnswer);
 };
