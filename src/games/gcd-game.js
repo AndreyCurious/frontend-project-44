@@ -4,11 +4,6 @@ import createBasisGame from '../index.js';
 const getСorrectResult = (firstVariable, secondVariable) => {
   let divisor = 1;
   let minVariable = 0;
-  if (firstVariable > secondVariable) {
-    minVariable = secondVariable;
-  } else {
-    minVariable = secondVariable;
-  }
   for (let i = 1; i <= minVariable; i += 1) {
     if (firstVariable % i === 0 && secondVariable % i === 0) {
       divisor = i;
