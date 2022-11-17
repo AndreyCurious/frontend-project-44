@@ -5,8 +5,8 @@ export default (rulesOfGame, createQuestionAnswer) => {
   const userName = readlineSync.question('May I have your name? ');
   console.log(`${'Hello,'} ${userName}!`);
   const roundsCount = 3;
-  let i = 0;
   console.log(rulesOfGame);
+  let i = 0;
   while (i < roundsCount) {
     const { question, correctAnswer } = createQuestionAnswer();
     console.log(`${'Question: '}${question}`);

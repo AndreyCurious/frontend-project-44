@@ -1,9 +1,9 @@
 import getRandomInt from '../helpers.js';
 import startGame from '../index.js';
 
-const getProgression = (itemsProgressionNum, startProgressionNum, intervalProgressionNum) => {
+const getProgression = (amountItemsPrigression, startProgressionNum, intervalProgressionNum) => {
   const progression = [];
-  const finishProgression = startProgressionNum + (itemsProgressionNum * intervalProgressionNum);
+  const finishProgression = startProgressionNum + (amountItemsPrigression * intervalProgressionNum);
   for (let i = startProgressionNum; i < finishProgression; i += intervalProgressionNum) {
     progression.push(i);
   }
@@ -13,10 +13,10 @@ const getProgression = (itemsProgressionNum, startProgressionNum, intervalProgre
 const createQuestionAnswer = () => {
   const startProgressionNum = getRandomInt();
   const intervalProgressionNum = getRandomInt(1, 10);
-  const itemsProgressionNum = getRandomInt(5, 11);
-  const indexUnknowNum = getRandomInt(0, itemsProgressionNum);
+  const amountItemsPrigression = getRandomInt(5, 11);
+  const indexUnknowNum = getRandomInt(0, amountItemsPrigression);
   const progression = getProgression(
-    itemsProgressionNum,
+    amountItemsPrigression,
     startProgressionNum,
     intervalProgressionNum,
   );
