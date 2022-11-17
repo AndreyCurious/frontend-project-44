@@ -1,32 +1,24 @@
 import getRandomInt from '../helpers.js';
-import createBasisGame from '../index.js';
+import startGame from '../index.js';
 
-const isPrime = (variable) => {
+const isPrime = (num) => {
   let numOfDivisors = 0;
-  for (let i = 1; i <= variable; i += 1) {
-    if (variable % i === 0) {
+  for (let i = 1; i <= num; i += 1) {
+    if (num % i === 0) {
       numOfDivisors += 1;
     }
   }
-  if (numOfDivisors === 2) {
-    return true;
-  }
-  return false;
+  return numOfDivisors === 2;
 };
 
 const createQuestionAnswer = () => {
-  const variable = getRandomInt();
-  const question = `${variable}`;
-  let answer = '';
-  if (isPrime(variable)) {
-    answer = 'yes';
-  } else {
-    answer = 'no';
-  }
-  return { question, answer };
+  const number = getRandomInt();
+  const question = `${number}`;
+  const correctAnswer = isPrime(number) ? 'yes' : 'no';
+  return { question, correctAnswer };
 };
 
 export default () => {
   const ruleOfPrime = 'Answer "yes" if given number is prime. Otherwise answer "no".';
-  createBasisGame(ruleOfPrime, createQuestionAnswer);
+  startGame(ruleOfPrime, createQuestionAnswer);
 };

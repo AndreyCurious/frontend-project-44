@@ -1,29 +1,33 @@
 import getRandomInt from '../helpers.js';
-import createBasisGame from '../index.js';
+import startGame from '../index.js';
 
-const getProgression = (itemsProgression) => {
-  const startProgression = getRandomInt();
-  const interval = getRandomInt(1, 10);
+const getProgression = (itemsProgressionNum, startProgressionNum, intervalProgressionNum) => {
   const progression = [];
-  const finishProgression = startProgression + (itemsProgression * interval);
-  for (let i = startProgression; i < finishProgression; i += interval) {
+  const finishProgression = startProgressionNum + (itemsProgressionNum * intervalProgressionNum);
+  for (let i = startProgressionNum; i < finishProgression; i += intervalProgressionNum) {
     progression.push(i);
   }
   return progression;
 };
 
-const getProgressionData = () => {
-  const itemsProgression = getRandomInt(5, 11);
-  const indexUnknowNum = getRandomInt(0, itemsProgression);
-  const progression = getProgression(itemsProgression);
+const createQuestionAnswer = () => {
+  const startProgressionNum = getRandomInt();
+  const intervalProgressionNum = getRandomInt(1, 10);
+  const itemsProgressionNum = getRandomInt(5, 11);
+  const indexUnknowNum = getRandomInt(0, itemsProgressionNum);
+  const progression = getProgression(
+    itemsProgressionNum,
+    startProgressionNum,
+    intervalProgressionNum,
+  );
   const uniknowNum = progression[indexUnknowNum];
   progression[indexUnknowNum] = '..';
   const question = progression.join(' ');
-  const answer = uniknowNum;
-  return { question, answer };
+  const correctAnswer = uniknowNum;
+  return { question, correctAnswer };
 };
 
 export default () => {
   const ruleOfProgression = 'What number is missing in the progression?';
-  createBasisGame(ruleOfProgression, getProgressionData);
+  startGame(ruleOfProgression, createQuestionAnswer);
 };

@@ -1,34 +1,34 @@
 import getRandomInt from '../helpers.js';
-import createBasisGame from '../index.js';
+import startGame from '../index.js';
 
 const getRandomOperator = (arr) => {
   const alert = Math.floor(Math.random() * arr.length);
   return arr[alert];
 };
 
-const getСorrectResult = (firstVariable, operator, secondVariable) => {
+const getCalculationAnswer = (firstNumber, operator, secondNumber) => {
   switch (operator) {
     case '-':
-      return firstVariable - secondVariable;
+      return firstNumber - secondNumber;
     case '+':
-      return firstVariable + secondVariable;
+      return firstNumber + secondNumber;
     case '*':
-      return firstVariable * secondVariable;
+      return firstNumber * secondNumber;
     default:
       throw new Error(`Unknown operator: '${operator}'!`);
   }
 };
 
 const createQuestionAnswer = () => {
-  const firstVariable = getRandomInt();
+  const firstNumber = getRandomInt();
   const operator = getRandomOperator(['+', '-', '*']);
-  const secondVariable = getRandomInt();
-  const question = `${firstVariable} ${operator} ${secondVariable}`;
-  const answer = getСorrectResult(firstVariable, operator, secondVariable);
-  return { question, answer };
+  const secondNumber = getRandomInt();
+  const question = `${firstNumber} ${operator} ${secondNumber}`;
+  const correctAnswer = getCalculationAnswer(firstNumber, operator, secondNumber);
+  return { question, correctAnswer };
 };
 
 export default () => {
   const ruleOfCalc = 'What is the result of the expression?';
-  createBasisGame(ruleOfCalc, createQuestionAnswer);
+  startGame(ruleOfCalc, createQuestionAnswer);
 };

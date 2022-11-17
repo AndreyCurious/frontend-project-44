@@ -1,8 +1,8 @@
+<h1>Brain Games will let you test your math skills!</h1>
+
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/AndreyCurious/frontend-project-44/workflows/hexlet-check/badge.svg)](https://github.com/AndreyCurious/frontend-project-44/actions)
 [![Maintainability](https://api.codeclimate.com/v1/badges/f3e3b061588284463d8d/maintainability)](https://codeclimate.com/github/AndreyCurious/frontend-project-44/maintainability)
-
-<h1>Brain Games will let you test your math skills!</h1>
 
 System requirements:
 node 13+

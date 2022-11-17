@@ -1,30 +1,22 @@
 import getRandomInt from '../helpers.js';
-import createBasisGame from '../index.js';
+import startGame from '../index.js';
 
-const getСorrectResult = (firstVariable, secondVariable) => {
-  let divisor = 1;
-  let minVariable = 0;
-  if (firstVariable > secondVariable) {
-    minVariable = secondVariable;
-  } else {
-    minVariable = secondVariable;
+const getMaxDivisor = (firstNumber, secondNumber) => {
+  if (secondNumber !== 0) {
+    const thirdNumber = firstNumber % secondNumber;
+    return getMaxDivisor(secondNumber, thirdNumber);
   }
-  for (let i = 1; i <= minVariable; i += 1) {
-    if (firstVariable % i === 0 && secondVariable % i === 0) {
-      divisor = i;
-    }
-  }
-  return divisor;
+  return firstNumber;
 };
 
 export default () => {
   const ruleOfGcd = 'Find the greatest common divisor of given numbers.';
   const createQuestionAnswer = () => {
-    const firstVariable = getRandomInt(1, 20);
-    const secondVariable = getRandomInt(1, 20);
-    const question = (`${firstVariable} ${secondVariable}`);
-    const answer = getСorrectResult(firstVariable, secondVariable);
-    return { question, answer };
+    const firstNumber = getRandomInt(1, 20);
+    const secondNumber = getRandomInt(1, 20);
+    const question = `${firstNumber} ${secondNumber}`;
+    const correctAnswer = getMaxDivisor(firstNumber, secondNumber);
+    return { question, correctAnswer };
   };
-  createBasisGame(ruleOfGcd, createQuestionAnswer);
+  startGame(ruleOfGcd, createQuestionAnswer);
 };
