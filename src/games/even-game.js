@@ -6,7 +6,9 @@ const isEven = (num) => num % 2 === 0;
 const createQuestionAnswer = () => {
   const number = getRandomInt();
   const question = `${number}`;
+
   const correctAnswer = isEven(number) ? 'yes' : 'no';
+
   return { question, correctAnswer };
 };
 

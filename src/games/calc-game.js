@@ -3,6 +3,7 @@ import startGame from '../index.js';
 
 const getRandomOperator = (arr) => {
   const randomIndex = Math.floor(Math.random() * arr.length);
+
   return arr[randomIndex];
 };
 
@@ -25,6 +26,7 @@ const createQuestionAnswer = () => {
   const secondNumber = getRandomInt();
   const question = `${firstNumber} ${operator} ${secondNumber}`;
   const correctAnswer = getCalculationAnswer(firstNumber, operator, secondNumber);
+
   return { question, correctAnswer };
 };
 

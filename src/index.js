@@ -7,6 +7,7 @@ export default (ruleOfGame, createQuestionAnswer) => {
   const roundsCount = 3;
   console.log(ruleOfGame);
   let i = 0;
+
   while (i < roundsCount) {
     const { question, correctAnswer } = createQuestionAnswer();
     console.log(`${'Question: '}${question}`);
@@ -21,5 +22,6 @@ export default (ruleOfGame, createQuestionAnswer) => {
       return console.log(`${"Let's try again,"} ${userName}!`);
     }
   }
+
   return console.log(`${'Congratulations,'} ${userName}!`);
 };
