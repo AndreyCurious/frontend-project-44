@@ -4,7 +4,7 @@ import startGame from '../index.js';
 const getGCD = (firstNumber, secondNumber) => {
   if (secondNumber !== 0) {
     const thirdNumber = firstNumber % secondNumber;
-    return getMaxDivisor(secondNumber, thirdNumber);
+    return getGCD(secondNumber, thirdNumber);
   }
   return firstNumber;
 };
