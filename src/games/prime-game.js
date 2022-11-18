@@ -2,13 +2,13 @@ import getRandomInt from '../helpers.js';
 import startGame from '../index.js';
 
 const isPrime = (num) => {
-  let numOfDivisors = 0;
+  let amountDivisors = 0;
   for (let i = 1; i <= num; i += 1) {
     if (num % i === 0) {
-      numOfDivisors += 1;
+      amountDivisors += 1;
     }
   }
-  return numOfDivisors === 2;
+  return amountDivisors === 2;
 };
 
 const createQuestionAnswer = () => {

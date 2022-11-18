@@ -2,8 +2,8 @@ import getRandomInt from '../helpers.js';
 import startGame from '../index.js';
 
 const getRandomOperator = (arr) => {
-  const alert = Math.floor(Math.random() * arr.length);
-  return arr[alert];
+  const randomIndex = Math.floor(Math.random() * arr.length);
+  return arr[randomIndex];
 };
 
 const getCalculationAnswer = (firstNumber, operator, secondNumber) => {

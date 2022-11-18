@@ -1,7 +1,7 @@
 import getRandomInt from '../helpers.js';
 import startGame from '../index.js';
 
-const getMaxDivisor = (firstNumber, secondNumber) => {
+const getGCD = (firstNumber, secondNumber) => {
   if (secondNumber !== 0) {
     const thirdNumber = firstNumber % secondNumber;
     return getMaxDivisor(secondNumber, thirdNumber);
@@ -15,7 +15,7 @@ export default () => {
     const firstNumber = getRandomInt(1, 20);
     const secondNumber = getRandomInt(1, 20);
     const question = `${firstNumber} ${secondNumber}`;
-    const correctAnswer = getMaxDivisor(firstNumber, secondNumber);
+    const correctAnswer = getGCD(firstNumber, secondNumber);
     return { question, correctAnswer };
   };
   startGame(ruleOfGcd, createQuestionAnswer);
