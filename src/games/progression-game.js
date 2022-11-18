@@ -14,7 +14,7 @@ const createQuestionAnswer = () => {
   const firstItemProgression = getRandomInt();
   const intervalProgression = getRandomInt(1, 10);
   const amountItemsProgression = getRandomInt(5, 11);
-  const indexHiddenNum = getRandomInt(0, amountItems);
+  const indexHiddenNum = getRandomInt(0, amountItemsProgression);
   const progression = getProgression(
     amountItemsProgression,
     firstItemProgression,
