@@ -11,14 +11,14 @@ const getProgression = (amountItems, firstItem, interval) => {
 };
 
 const createQuestionAnswer = () => {
-  const firstItemProgression = getRandomInt();
-  const intervalProgression = getRandomInt(1, 10);
-  const amountItemsProgression = getRandomInt(5, 11);
-  const indexHiddenNum = getRandomInt(0, amountItemsProgression);
+  const firstItem = getRandomInt();
+  const interval = getRandomInt(1, 10);
+  const amountItems = getRandomInt(5, 11);
+  const indexHiddenNum = getRandomInt(0, amountItems);
   const progression = getProgression(
-    amountItemsProgression,
-    firstItemProgression,
-    intervalProgression,
+    amountItems,
+    firstItem,
+    interval,
   );
   const hiddenNum = progression[indexHiddenNum];
   progression[indexHiddenNum] = '..';
